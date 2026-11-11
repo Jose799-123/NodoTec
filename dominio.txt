@@ -1,0 +1,10 @@
+PROYECTO FINAL - PROGRAMACIÓN WEB I
+Sitio web: NodoTec - Soporte técnico y reparación de computadores
+
+URL del sitio publicado (GitHub Pages):
+https://jose799-123.github.io/NodoTec/
+
+Repositorio con el código fuente:
+https://github.com/Jose799-123/NodoTec
+
+Estudiante: ___________________________________

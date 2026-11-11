@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NodoTec: mantenimiento y reparación de computadores, recuperación de datos, eliminación de virus e instalación de redes. Cotiza y agenda tu servicio en línea.">
+  <meta name="author" content="[Tu nombre]">
+  <meta name="theme-color" content="#0369a1">
+  <title>NodoTec | Soporte técnico y reparación de computadores</title>
+
+  <!-- Ícono de la pestaña del navegador -->
+  <link rel="icon" href="recursos/iconos/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="recursos/iconos/apple-touch-icon.png">
+
+  <!-- Tipografías (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
+
+  <!-- Hoja de estilos del sitio -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- Enlace de accesibilidad: permite saltar el menú usando el teclado -->
+  <a href="#contenido" class="saltar">Saltar al contenido</a>
+
+  <!-- ===================== ENCABEZADO ===================== -->
+  <header class="encabezado" id="encabezado">
+    <div class="contenedor barra">
+
+      <a href="#inicio" class="logo" aria-label="NodoTec, ir al inicio">
+        <img src="recursos/img/logo.svg" alt="" width="40" height="40">
+        <span>Nodo<strong>Tec</strong></span>
+      </a>
+
+      <!-- Menú de navegación principal -->
+      <nav class="menu" id="menu" aria-label="Menú principal">
+        <ul class="menu-lista">
+          <li><a href="#inicio" class="activo">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#cotizador">Cotizador <span class="insignia" id="insignia" hidden>0</span></a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#testimonios">Opiniones</a></li>
+          <li><a href="#preguntas">Preguntas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="acciones">
+        <!-- Botón para cambiar entre modo claro y oscuro -->
+        <button type="button" class="boton-icono" id="btnTema" aria-label="Activar modo oscuro">
+          <img src="recursos/iconos/luna.svg" alt="" id="iconoTema" width="22" height="22">
+        </button>
+        <!-- Botón hamburguesa (solo visible en tabletas y celulares) -->
+        <button type="button" class="hamburguesa" id="btnMenu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===================== CONTENIDO PRINCIPAL ===================== -->
+  <main id="contenido">
+
+    <!-- ---------- INICIO / HERO ---------- -->
+    <section id="inicio" class="hero">
+      <div class="contenedor hero-grid">
+        <div class="hero-texto">
+          <p class="etiqueta">Servicio técnico a domicilio y en tienda</p>
+          <h1>Tu computador como nuevo, <span class="resaltado">sin complicaciones</span></h1>
+          <p class="hero-descripcion">
+            Reparamos, mantenemos y protegemos tus equipos. Diagnóstico gratuito,
+            técnicos certificados y garantía en todos nuestros servicios.
+          </p>
+          <div class="hero-botones">
+            <a href="#contacto" class="boton boton-primario">Agendar servicio</a>
+            <a href="#servicios" class="boton boton-secundario">Ver servicios</a>
+          </div>
+          <ul class="estadisticas">
+            <li><strong>+<span class="contador" data-meta="1500">0</span></strong> equipos reparados</li>
+            <li><strong><span class="contador" data-meta="98">0</span>%</strong> clientes satisfechos</li>
+            <li><strong><span class="contador" data-meta="90">0</span></strong> días de garantía</li>
+          </ul>
+        </div>
+        <figure class="hero-imagen">
+          <img src="recursos/img/hero.svg" alt="Ilustración de un portátil en diagnóstico con un escudo de seguridad" width="520" height="420">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ---------- SERVICIOS ---------- -->
+    <section id="servicios" class="seccion">
+      <div class="contenedor">
+        <div class="seccion-titulo">
+          <p class="etiqueta">Lo que hacemos</p>
+          <h2>Nuestros servicios</h2>
+          <p>Filtra por categoría y agrega a tu cotización los servicios que necesitas.</p>
+        </div>
+
+        <!-- Botones de filtro -->
+        <div class="filtros" role="group" aria-label="Filtrar servicios por categoría">
+          <button type="button" class="filtro activo" data-filtro="todos" aria-pressed="true">Todos</button>
+          <button type="button" class="filtro" data-filtro="hardware" aria-pressed="false">Hardware</button>
+          <button type="button" class="filtro" data-filtro="software" aria-pressed="false">Software</button>
+          <button type="button" class="filtro" data-filtro="redes" aria-pressed="false">Redes</button>
+        </div>
+        <p class="resultado-filtro" id="resultadoFiltro" aria-live="polite">Mostrando 8 servicios</p>
+
+        <div class="servicios-grid">
+          <article class="tarjeta" data-categoria="hardware">
+            <div class="tarjeta-icono"><img src="recursos/iconos/mantenimiento.svg" alt="" width="30" height="30"></div>
+            <span class="tarjeta-categoria">Hardware</span>
+            <h3>Mantenimiento preventivo</h3>
+            <p>Limpieza interna, cambio de pasta térmica y revisión de componentes para evitar recalentamientos.</p>
+            <div class="tarjeta-pie">
+              <p class="precio">$80.000</p>
+              <button type="button" class="boton boton-pequeno btn-agregar" data-nombre="Mantenimiento preventivo" data-precio="80000">Agregar</button>
+            </div>
+          </article>
+
+          <article class="tarjeta" data-categoria="hardware">
+            <div class="tarjeta-icono"><img src="recursos/iconos/hardware.svg" alt="" width="30" height="30"></div>
+            <span class="tarjeta-categoria">Hardware</span>
+            <h3>Reparación de hardware</h3>
+            <p>Diagnóstico y cambio de piezas dañadas: pantalla, teclado, disco, memoria RAM o fuente de poder.</p>
+            <div class="tarjeta-pie">
+              <p class="precio"><small>Desde</small> $120.000</p>
+              <button type="button" class="boton boton-pequeno btn-agregar" data-nombre="Reparación de hardware" data-precio="120000">Agregar</button>
+            </div>
+          </article>
+
+          <article class="tarjeta" data-categoria="hardware">
+            <div class="tarjeta-icono"><img src="recursos/iconos/ensamble.svg" alt="" width="30" height="30"></div>
+            <span class="tarjeta-categoria">Hardware</span>
+            <h3>Ensamble de computadores</h3>
+            <p>Te asesoramos en la compra de piezas y armamos tu PC para estudio, oficina o videojuegos.</p>
+            <div class="tarjeta-pie">
+              <p class="precio">$90.000</p>
+              <button type="button" class="boton boton-pequeno btn-agregar" data-nombre="Ensamble de computadores" data-precio="90000">Agregar</button>
+            </div>
+          </article>
+
+          <article class="tarjeta" data-categoria="software">
+            <div class="tarjeta-icono"><img src="recursos/iconos/sistema.svg" alt="" width="30" height="30"></div>
+            <span class="tarjeta-categoria">Software</span>
+            <h3>Instalación de sistema operativo</h3>
+            <p>Instalación limpia de Windows o Linux con controladores actualizados y copia de seguridad previa.</p>
+            <div class="tarjeta-pie">
+              <p class="precio">$70.000</p>
+              <button type="button" class="boton boton-pequeno btn-agregar" data-nombre="Instalación de sistema operativo" data-precio="70000">Agregar</button>
+            </div>
+          </article>
+
+          <article class="tarjeta" data-categoria="software">
+            <div class="tarjeta-icono"><img src="recursos/iconos/virus.svg" alt="" width="30" height="30"></div>
+            <span class="tarjeta-categoria">Software</span>
+            <h3>Eliminación de virus</h3>
+            <p>Análisis completo, eliminación de malware y configuración de un antivirus para mantenerte protegido.</p>
+            <div class="tarjeta-pie">
+              <p class="precio">$60.000</p>
+              <button type="button" class="boton boton-pequeno btn-agregar" data-nombre="Eliminación de virus" data-precio="60000">Agregar</button>
+            </div>
+          </article>
+
+          <article class="tarjeta" data-categoria="software">
+            <div class="tarjeta-icono"><img src="recursos/iconos/datos.svg" alt="" width="30" height="30"></div>
+            <span class="tarjeta-categoria">Software</span>
+            <h3>Recuperación de datos</h3>
+            <p>Recuperamos fotos, documentos y archivos de discos dañados, memorias USB o equipos formateados.</p>
+            <div class="tarjeta-pie">
+              <p class="precio"><small>Desde</small> $150.000</p>
+              <button type="button" class="boton boton-pequeno btn-agregar" data-nombre="Recuperación de datos" data-precio="150000">Agregar</button>
+            </div>
+          </article>
+
+          <article class="tarjeta" data-categoria="redes">
+            <div class="tarjeta-icono"><img src="recursos/iconos/redes.svg" alt="" width="30" height="30"></div>
+            <span class="tarjeta-categoria">Redes</span>
+            <h3>Instalación de redes WiFi</h3>
+            <p>Configuración de routers y repetidores para que tengas buena señal en toda tu casa o negocio.</p>
+            <div class="tarjeta-pie">
+              <p class="precio">$100.000</p>
+              <button type="button" class="boton boton-pequeno btn-agregar" data-nombre="Instalación de redes WiFi" data-precio="100000">Agregar</button>
+            </div>
+          </article>
+
+          <article class="tarjeta" data-categoria="redes">
+            <div class="tarjeta-icono"><img src="recursos/iconos/cableado.svg" alt="" width="30" height="30"></div>
+            <span class="tarjeta-categoria">Redes</span>
+            <h3>Cableado estructurado</h3>
+            <p>Instalación de puntos de red, organización del cableado y configuración de equipos para oficinas.</p>
+            <div class="tarjeta-pie">
+              <p class="precio">$130.000</p>
+              <button type="button" class="boton boton-pequeno btn-agregar" data-nombre="Cableado estructurado" data-precio="130000">Agregar</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- COTIZADOR ---------- -->
+    <section id="cotizador" class="seccion seccion-alterna">
+      <div class="contenedor cotizador-grid">
+        <div class="cotizador-info">
+          <p class="etiqueta">Cotiza en segundos</p>
+          <h2>Calcula el valor de tu servicio</h2>
+          <p>Agrega servicios desde la sección anterior y el total se calcula automáticamente.</p>
+          <ul class="beneficios">
+            <li>10&nbsp;% de descuento si agregas <strong>3 o más servicios</strong>.</li>
+            <li>Servicio a domicilio con un recargo de <strong>$15.000</strong>.</li>
+            <li>Los precios marcados con «Desde» pueden variar según el diagnóstico.</li>
+          </ul>
+        </div>
+
+        <article class="cotizacion">
+          <h3>Resumen de tu cotización</h3>
+          <ul class="lista-cotizacion" id="listaCotizacion">
+            <li class="vacio">Aún no has agregado servicios.</li>
+          </ul>
+
+          <label class="opcion">
+            <input type="checkbox" id="chkDomicilio">
+            Quiero el servicio a domicilio (+$15.000)
+          </label>
+
+          <dl class="desglose">
+            <div><dt>Subtotal</dt><dd id="subtotal">$0</dd></div>
+            <div><dt>Descuento</dt><dd id="descuento">$0</dd></div>
+            <div><dt>Domicilio</dt><dd id="valorDomicilio">$0</dd></div>
+            <div class="total"><dt>Total</dt><dd id="total">$0</dd></div>
+          </dl>
+
+          <div class="cotizacion-botones">
+            <button type="button" class="boton boton-secundario" id="btnVaciar">Vaciar</button>
+            <button type="button" class="boton boton-primario" id="btnSolicitar">Solicitar servicio</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ---------- NOSOTROS ---------- -->
+    <section id="nosotros" class="seccion">
+      <div class="contenedor">
+        <div class="seccion-titulo">
+          <p class="etiqueta">Quiénes somos</p>
+          <h2>¿Por qué elegir NodoTec?</h2>
+          <p>Somos un equipo de técnicos e ingenieros que ayuda a estudiantes, hogares y pequeños negocios a mantener su tecnología funcionando.</p>
+        </div>
+
+        <div class="valores-grid">
+          <article class="valor">
+            <img src="recursos/iconos/lupa.svg" alt="" width="36" height="36">
+            <h3>Diagnóstico gratis</h3>
+            <p>Revisamos tu equipo sin costo y te explicamos qué tiene antes de cobrarte.</p>
+          </article>
+          <article class="valor">
+            <img src="recursos/iconos/garantia.svg" alt="" width="36" height="36">
+            <h3>90 días de garantía</h3>
+            <p>Todos nuestros trabajos están respaldados por garantía escrita.</p>
+          </article>
+          <article class="valor">
+            <img src="recursos/iconos/tecnico.svg" alt="" width="36" height="36">
+            <h3>Técnicos certificados</h3>
+            <p>Personal capacitado en hardware, sistemas operativos y redes.</p>
+          </article>
+          <article class="valor">
+            <img src="recursos/iconos/domicilio.svg" alt="" width="36" height="36">
+            <h3>Atención a domicilio</h3>
+            <p>Vamos hasta tu casa u oficina para que no pierdas tiempo.</p>
+          </article>
+        </div>
+
+        <h3 class="subtitulo">Así trabajamos</h3>
+        <ol class="pasos">
+          <li>
+            <span class="paso-numero">1</span>
+            <h4>Agenda</h4>
+            <p>Llena el formulario y elige la fecha que mejor te quede.</p>
+          </li>
+          <li>
+            <span class="paso-numero">2</span>
+            <h4>Diagnóstico</h4>
+            <p>Revisamos el equipo y te enviamos el presupuesto.</p>
+          </li>
+          <li>
+            <span class="paso-numero">3</span>
+            <h4>Reparación</h4>
+            <p>Con tu aprobación, solucionamos el problema.</p>
+          </li>
+          <li>
+            <span class="paso-numero">4</span>
+            <h4>Entrega</h4>
+            <p>Recibes tu equipo probado y con garantía.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ---------- TESTIMONIOS (carrusel) ---------- -->
+    <section id="testimonios" class="seccion seccion-alterna">
+      <div class="contenedor">
+        <div class="seccion-titulo">
+          <p class="etiqueta">Opiniones</p>
+          <h2>Lo que dicen nuestros clientes</h2>
+        </div>
+
+        <div class="carrusel">
+          <button type="button" class="carrusel-flecha" id="btnAnterior" aria-label="Testimonio anterior">&#8249;</button>
+
+          <div class="carrusel-ventana" aria-live="polite">
+            <article class="testimonio activo">
+              <p class="estrellas"><span aria-hidden="true">★★★★★</span><span class="solo-lector">Calificación: 5 de 5 estrellas</span></p>
+              <blockquote>
+                <p>“Mi portátil no encendía en plena semana de parciales. En dos días me lo entregaron y además recuperaron todos mis trabajos.”</p>
+              </blockquote>
+              <div class="testimonio-autor">
+                <img src="recursos/img/avatar-1.svg" alt="" width="52" height="52">
+                <p><strong>Laura Gómez</strong><span>Estudiante universitaria</span></p>
+              </div>
+            </article>
+
+            <article class="testimonio">
+              <p class="estrellas"><span aria-hidden="true">★★★★★</span><span class="solo-lector">Calificación: 5 de 5 estrellas</span></p>
+              <blockquote>
+                <p>“Instalaron la red WiFi de mi papelería y configuraron el computador de la caja. Excelente atención y precios justos.”</p>
+              </blockquote>
+              <div class="testimonio-autor">
+                <img src="recursos/img/avatar-2.svg" alt="" width="52" height="52">
+                <p><strong>Andrés Rodríguez</strong><span>Dueño de negocio</span></p>
+              </div>
+            </article>
+
+            <article class="testimonio">
+              <p class="estrellas"><span aria-hidden="true">★★★★☆</span><span class="solo-lector">Calificación: 4 de 5 estrellas</span></p>
+              <blockquote>
+                <p>“Le hicieron mantenimiento a mi equipo de diseño y ahora funciona mucho más rápido. Muy profesionales y puntuales.”</p>
+              </blockquote>
+              <div class="testimonio-autor">
+                <img src="recursos/img/avatar-3.svg" alt="" width="52" height="52">
+                <p><strong>Marcela Torres</strong><span>Diseñadora gráfica</span></p>
+              </div>
+            </article>
+
+            <article class="testimonio">
+              <p class="estrellas"><span aria-hidden="true">★★★★★</span><span class="solo-lector">Calificación: 5 de 5 estrellas</span></p>
+              <blockquote>
+                <p>“Me ayudaron a eliminar un virus que bloqueaba mis archivos. Me explicaron todo y me dieron consejos para evitarlo.”</p>
+              </blockquote>
+              <div class="testimonio-autor">
+                <img src="recursos/img/avatar-4.svg" alt="" width="52" height="52">
+                <p><strong>Jorge Díaz</strong><span>Docente</span></p>
+              </div>
+            </article>
+          </div>
+
+          <button type="button" class="carrusel-flecha" id="btnSiguiente" aria-label="Testimonio siguiente">&#8250;</button>
+        </div>
+
+        <!-- Los puntos indicadores se crean con JavaScript -->
+        <div class="carrusel-puntos" id="puntos"></div>
+      </div>
+    </section>
+
+    <!-- ---------- PREGUNTAS FRECUENTES (acordeón) ---------- -->
+    <section id="preguntas" class="seccion">
+      <div class="contenedor contenedor-estrecho">
+        <div class="seccion-titulo">
+          <p class="etiqueta">Resolvemos tus dudas</p>
+          <h2>Preguntas frecuentes</h2>
+        </div>
+
+        <div class="acordeon">
+          <article class="acordeon-item">
+            <h3>
+              <button type="button" class="acordeon-boton" aria-expanded="false">
+                ¿El diagnóstico tiene algún costo?
+                <span class="acordeon-icono" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="acordeon-panel">
+              <p>No. El diagnóstico es gratuito. Si decides no hacer la reparación, puedes retirar tu equipo sin pagar nada.</p>
+            </div>
+          </article>
+
+          <article class="acordeon-item">
+            <h3>
+              <button type="button" class="acordeon-boton" aria-expanded="false">
+                ¿Cuánto tiempo tarda una reparación?
+                <span class="acordeon-icono" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="acordeon-panel">
+              <p>La mayoría de servicios se entregan en 24 a 48 horas. Si se necesitan repuestos, puede tardar de 3 a 5 días hábiles.</p>
+            </div>
+          </article>
+
+          <article class="acordeon-item">
+            <h3>
+              <button type="button" class="acordeon-boton" aria-expanded="false">
+                ¿Mis archivos están seguros?
+                <span class="acordeon-icono" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="acordeon-panel">
+              <p>Sí. Trabajamos con acuerdos de confidencialidad y, antes de cualquier formateo, hacemos una copia de seguridad si nos autorizas.</p>
+            </div>
+          </article>
+
+          <article class="acordeon-item">
+            <h3>
+              <button type="button" class="acordeon-boton" aria-expanded="false">
+                ¿Qué garantía ofrecen?
+                <span class="acordeon-icono" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="acordeon-panel">
+              <p>Todos los servicios tienen 90 días de garantía sobre la mano de obra. Los repuestos tienen la garantía del fabricante.</p>
+            </div>
+          </article>
+
+          <article class="acordeon-item">
+            <h3>
+              <button type="button" class="acordeon-boton" aria-expanded="false">
+                ¿Qué medios de pago aceptan?
+                <span class="acordeon-icono" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="acordeon-panel">
+              <p>Efectivo, transferencia bancaria, billeteras digitales y tarjetas débito o crédito.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- CONTACTO + FORMULARIO ---------- -->
+    <section id="contacto" class="seccion seccion-alterna">
+      <div class="contenedor contacto-grid">
+
+        <aside class="contacto-info">
+          <p class="etiqueta">Contáctanos</p>
+          <h2>Agenda tu servicio</h2>
+          <p>Completa el formulario y un técnico te contactará en menos de 24 horas para confirmar la cita.</p>
+
+          <address>
+            <ul class="datos-contacto">
+              <li>
+                <span class="dato-icono"><img src="recursos/iconos/ubicacion.svg" alt="" width="22" height="22"></span>
+                <span><strong>Dirección</strong>Calle 45 # 13-20, Local 104</span>
+              </li>
+              <li>
+                <span class="dato-icono"><img src="recursos/iconos/telefono.svg" alt="" width="22" height="22"></span>
+                <span><strong>Celular</strong><a href="tel:+573001234567">+57&nbsp;300&nbsp;123&nbsp;4567</a></span>
+              </li>
+              <li>
+                <span class="dato-icono"><img src="recursos/iconos/correo.svg" alt="" width="22" height="22"></span>
+                <span><strong>Correo</strong><a href="mailto:contacto@nodotec.com">contacto@nodotec.com</a></span>
+              </li>
+              <li>
+                <span class="dato-icono"><img src="recursos/iconos/reloj.svg" alt="" width="22" height="22"></span>
+                <span><strong>Horario</strong>Lunes a sábado, 8:00 a. m. – 6:00 p. m.</span>
+              </li>
+            </ul>
+          </address>
+        </aside>
+
+        <!-- novalidate: desactiva la validación del navegador para usar la nuestra en JavaScript -->
+        <form class="formulario" id="formulario" novalidate>
+          <h3>Formulario de solicitud</h3>
+          <p class="nota">Los campos marcados con <span class="obligatorio">*</span> son obligatorios.</p>
+
+          <div class="campo">
+            <label for="nombre">Nombre completo <span class="obligatorio">*</span></label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: Laura Gómez" autocomplete="name" aria-describedby="error-nombre">
+            <small class="error" id="error-nombre"></small>
+          </div>
+
+          <div class="fila">
+            <div class="campo">
+              <label for="correo">Correo electrónico <span class="obligatorio">*</span></label>
+              <input type="email" id="correo" name="correo" placeholder="nombre@correo.com" autocomplete="email" aria-describedby="error-correo">
+              <small class="error" id="error-correo"></small>
+            </div>
+            <div class="campo">
+              <label for="telefono">Celular <span class="obligatorio">*</span></label>
+              <input type="tel" id="telefono" name="telefono" placeholder="3001234567" autocomplete="tel" inputmode="numeric" maxlength="13" aria-describedby="error-telefono">
+              <small class="error" id="error-telefono"></small>
+            </div>
+          </div>
+
+          <div class="fila">
+            <div class="campo">
+              <label for="dispositivo">Tipo de equipo <span class="obligatorio">*</span></label>
+              <select id="dispositivo" name="dispositivo" aria-describedby="error-dispositivo">
+                <option value="">Selecciona una opción</option>
+                <option value="Computador portátil">Computador portátil</option>
+                <option value="Computador de escritorio">Computador de escritorio</option>
+                <option value="Todo en uno">Todo en uno</option>
+                <option value="Impresora">Impresora</option>
+                <option value="Router o red">Router o red</option>
+                <option value="Otro">Otro</option>
+              </select>
+              <small class="error" id="error-dispositivo"></small>
+            </div>
+            <div class="campo">
+              <label for="fecha">Fecha preferida <span class="obligatorio">*</span></label>
+              <input type="date" id="fecha" name="fecha" aria-describedby="error-fecha">
+              <small class="error" id="error-fecha"></small>
+            </div>
+          </div>
+
+          <fieldset class="campo">
+            <legend>Modalidad del servicio <span class="obligatorio">*</span></legend>
+            <div class="opciones">
+              <label class="opcion">
+                <input type="radio" name="modalidad" value="En tienda"> En tienda
+              </label>
+              <label class="opcion">
+                <input type="radio" name="modalidad" value="A domicilio"> A domicilio
+              </label>
+            </div>
+            <small class="error" id="error-modalidad"></small>
+          </fieldset>
+
+          <div class="campo">
+            <label for="descripcion">Describe el problema <span class="obligatorio">*</span></label>
+            <textarea id="descripcion" name="descripcion" rows="4" maxlength="500" placeholder="Ej: el portátil se apaga solo después de unos minutos de uso..." aria-describedby="error-descripcion contadorCaracteres"></textarea>
+            <div class="campo-ayuda">
+              <small class="error" id="error-descripcion"></small>
+              <small class="contador-caracteres" id="contadorCaracteres">0 / 500</small>
+            </div>
+          </div>
+
+          <div class="campo campo-check">
+            <input type="checkbox" id="terminos" name="terminos" aria-describedby="error-terminos">
+            <label for="terminos">Acepto el tratamiento de mis datos personales según la Ley 1581 de 2012. <span class="obligatorio">*</span></label>
+            <small class="error" id="error-terminos"></small>
+          </div>
+
+          <div class="formulario-botones">
+            <button type="reset" class="boton boton-secundario">Limpiar</button>
+            <button type="submit" class="boton boton-primario" id="btnEnviar">Enviar solicitud</button>
+          </div>
+
+          <!-- Aquí JavaScript muestra el mensaje de respuesta -->
+          <div class="mensaje" id="mensajeFormulario" role="status" aria-live="polite" hidden></div>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== PIE DE PÁGINA ===================== -->
+  <footer class="pie">
+    <div class="contenedor pie-grid">
+      <div class="pie-marca">
+        <a href="#inicio" class="logo logo-claro">
+          <img src="recursos/img/logo.svg" alt="" width="36" height="36">
+          <span>Nodo<strong>Tec</strong></span>
+        </a>
+        <p>Soporte técnico, reparación de computadores y redes para hogares, estudiantes y pequeños negocios.</p>
+      </div>
+
+      <nav aria-label="Enlaces del pie de página">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#cotizador">Cotizador</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h4>Horario</h4>
+        <p>Lunes a viernes<br>8:00 a. m. – 6:00 p. m.</p>
+        <p>Sábados<br>9:00 a. m. – 2:00 p. m.</p>
+      </div>
+    </div>
+
+    <div class="pie-inferior">
+      <p>&copy; <span id="anio">2026</span> NodoTec — Empresa ficticia creada con fines académicos.</p>
+      <p>Proyecto final de Programación Web I · Desarrollado por <strong>[Tu nombre]</strong></p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante para volver al inicio -->
+  <button type="button" class="volver-arriba" id="btnArriba" aria-label="Volver al inicio de la página">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- Notificación emergente (la controla JavaScript) -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
