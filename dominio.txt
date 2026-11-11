@@ -1,5 +1,5 @@
 PROYECTO FINAL - PROGRAMACIÓN WEB I
-Sitio web: NodoTec - Soporte técnico y reparación de computadores
+Sitio web: NodoTec - Servicio técnico de computadores
 
 URL del sitio publicado (GitHub Pages):
 https://jose799-123.github.io/NodoTec/
