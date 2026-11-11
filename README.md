@@ -44,7 +44,7 @@ ProyectoFinal_NodoTec/
 
 | Requerimiento | Implementación |
 |---|---|
-| **1. Estructura HTML** | `header`, `nav` (2), `main`, `section` (7), `article` (22), `footer`, además de `aside`, `figure`, `address`, `blockquote`, `fieldset`. |
+| **1. Estructura HTML** | `header`, `nav` (2), `main`, `section` (7), `article` (22), `footer`, además de `figure`, `address`, `blockquote`, `fieldset`. |
 | **2. Selectores CSS** | Etiqueta (`body`, `h1`), clase (`.tarjeta`), ID (`#inicio`, `#formulario`), combinados: descendiente, hijo `>`, hermano `+`, compuesto, agrupado, atributo `[type="..."]`, pseudoclases y pseudoelementos. Ver índice al inicio de `estilos.css`. |
 | **3. Menú de navegación** | Menú fijo con enlaces a cada sección, desplazamiento suave, resaltado de la sección activa y menú hamburguesa en móviles. |
 | **4. Botones** | Modo oscuro, hamburguesa, filtros, agregar/quitar servicios, vaciar y solicitar cotización, carrusel, acordeón, limpiar/enviar formulario y volver arriba. |

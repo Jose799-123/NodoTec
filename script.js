@@ -537,6 +537,7 @@ function mostrarError(campo, mensaje) {
   contenedor.classList.remove("valido");
   contenedor.querySelector(".error").textContent = mensaje;
   campo.setAttribute("aria-invalid", "true");
+  actualizarMensajeError();
 }
 
 function marcarValido(campo) {
@@ -545,6 +546,7 @@ function marcarValido(campo) {
   contenedor.classList.add("valido");
   contenedor.querySelector(".error").textContent = "";
   campo.setAttribute("aria-invalid", "false");
+  actualizarMensajeError();
 }
 
 // Convierte "2026-11-20" en un objeto Date con la hora local.
@@ -724,6 +726,20 @@ function mostrarMensajeError(cantidadErrores) {
   mensajeFormulario.appendChild(titulo);
   mensajeFormulario.appendChild(texto);
   mensajeFormulario.hidden = false;
+}
+
+// Si el mensaje de error general está visible, actualiza cuántos campos
+// faltan por corregir. Cuando ya no queda ninguno, lo oculta.
+function actualizarMensajeError() {
+  if (!mensajeFormulario.classList.contains("fallo")) {
+    return;
+  }
+  const pendientes = formulario.querySelectorAll(".campo.invalido").length;
+  if (pendientes === 0) {
+    ocultarMensaje();
+  } else {
+    mostrarMensajeError(pendientes);
+  }
 }
 
 // Construye el resumen con createElement y textContent.
