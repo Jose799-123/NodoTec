@@ -2,7 +2,7 @@
 
 Proyecto final de Programación Web I (HTML, CSS y JavaScript).
 
-- **Estudiante:** [Tu nombre]
+- **Estudiante:** Jose Esteban Castro Brieva
 - **URL:** ver `dominio.txt`
 - **Propósito:** mostrar los servicios de un taller de computadores (empresa ficticia) y recibir solicitudes.
 - **Público objetivo:** estudiantes, hogares y pequeños negocios.
