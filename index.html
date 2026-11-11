@@ -4,18 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="NodoTec: servicio técnico de computadores.">
-  <title>NodoTec | Servicio técnico</title>
-  <link rel="icon" href="recursos/iconos/favicon.svg" type="image/svg+xml">
+  <title>NodoTec</title>
+  <link rel="icon" href="recursos/iconos/favicon.svg">
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-
-  <!-- Encabezado con el logo y el menú -->
   <header>
-    <a href="#inicio" class="logo">
-      <img src="recursos/img/logo.svg" alt="" width="40" height="40">
-      NodoTec
-    </a>
+    <h1><img src="recursos/img/logo.svg" alt="" width="40" height="40"> NodoTec</h1>
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#servicios">Servicios</a>
@@ -24,83 +19,58 @@
   </header>
 
   <main>
-
-    <!-- Sección 1: Inicio -->
     <section id="inicio">
-      <div class="texto">
-        <h1>Tu computador como nuevo</h1>
-        <p>Reparamos y mantenemos tus equipos con diagnóstico gratis y garantía de 90 días.</p>
-        <a href="#contacto" class="boton">Agendar servicio</a>
-      </div>
-      <img src="recursos/img/hero.svg" alt="Ilustración de un portátil en reparación" width="520" height="420">
+      <h2>Tu computador como nuevo</h2>
+      <p>Reparamos y mantenemos tus equipos con diagnóstico gratis.</p>
     </section>
 
-    <!-- Sección 2: Servicios -->
     <section id="servicios">
-      <h2>Nuestros servicios</h2>
+      <h2>Servicios</h2>
       <div class="tarjetas">
-
         <article class="tarjeta">
           <img src="recursos/iconos/mantenimiento.svg" alt="" width="48" height="48">
           <h3>Mantenimiento</h3>
-          <p class="precio">$80.000</p>
-          <p class="detalle oculto">Limpieza interna, cambio de pasta térmica y revisión general del equipo.</p>
-          <button type="button" class="btn-detalle">Ver más</button>
+          <p class="oculto">Limpieza interna y revisión general. Precio: $80.000</p>
+          <button type="button">Ver más</button>
         </article>
-
         <article class="tarjeta">
           <img src="recursos/iconos/virus.svg" alt="" width="48" height="48">
           <h3>Eliminación de virus</h3>
-          <p class="precio">$60.000</p>
-          <p class="detalle oculto">Eliminamos virus y programas maliciosos e instalamos un antivirus.</p>
-          <button type="button" class="btn-detalle">Ver más</button>
+          <p class="oculto">Limpieza de virus e instalación de antivirus. Precio: $60.000</p>
+          <button type="button">Ver más</button>
         </article>
-
         <article class="tarjeta">
           <img src="recursos/iconos/datos.svg" alt="" width="48" height="48">
           <h3>Recuperación de datos</h3>
-          <p class="precio">$150.000</p>
-          <p class="detalle oculto">Recuperamos fotos y documentos de discos dañados o memorias USB.</p>
-          <button type="button" class="btn-detalle">Ver más</button>
+          <p class="oculto">Recuperamos archivos de discos y memorias USB. Precio: $150.000</p>
+          <button type="button">Ver más</button>
         </article>
-
       </div>
     </section>
 
-    <!-- Sección 3: Contacto -->
     <section id="contacto">
-      <h2>Contáctanos</h2>
-
-      <!-- novalidate: la validación la hace JavaScript -->
+      <h2>Contacto</h2>
       <form id="formulario" novalidate>
         <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" placeholder="Ej: Laura Gómez">
-
+        <input type="text" id="nombre">
         <label for="correo">Correo</label>
-        <input type="email" id="correo" placeholder="nombre@correo.com">
-
+        <input type="email" id="correo">
         <label for="servicio">Servicio</label>
         <select id="servicio">
-          <option value="">Selecciona un servicio</option>
           <option>Mantenimiento</option>
           <option>Eliminación de virus</option>
           <option>Recuperación de datos</option>
         </select>
-
         <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" rows="4" placeholder="Cuéntanos qué le pasa a tu equipo"></textarea>
-
-        <button type="submit" class="boton">Enviar</button>
-
-        <!-- Aquí JavaScript escribe el mensaje de respuesta -->
+        <textarea id="mensaje"></textarea>
+        <button type="submit">Enviar</button>
         <p id="respuesta" role="status"></p>
       </form>
     </section>
-
   </main>
 
   <footer>
-    <p>&copy; 2026 NodoTec · Proyecto de Programación Web I · [Tu nombre]</p>
+    <p>© 2026 NodoTec · Programación Web I · [Tu nombre]</p>
   </footer>
 
   <script src="script.js"></script>

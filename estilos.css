@@ -1,285 +1,34 @@
-/* ===================================
-   NodoTec - Estilos
-   =================================== */
+/* Selectores de etiqueta */
+body { margin: 0; font-family: Arial, sans-serif; background: #f5f7fa; color: #1e293b; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 10px 5%; background: #fff; }
+h1 { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 1.5rem; }
+section { padding: 40px 5%; text-align: center; }
+button { padding: 10px 20px; background: #0369a1; color: #fff; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer; }
+footer { padding: 15px; background: #0f172a; color: #fff; text-align: center; }
 
+/* Selector de ID */
+#inicio { background: #e0f2fe; }
 
-/* ----- Selectores de etiqueta ----- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Selectores de clase */
+.tarjetas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.tarjeta { padding: 20px; background: #fff; border-radius: 10px; }
+.oculto { display: none; }
 
-html {
-  scroll-behavior: smooth;
-}
+/* Selectores combinados */
+nav a { margin-left: 20px; color: #1e293b; font-weight: bold; text-decoration: none; }
+nav a:hover { color: #0369a1; }
+.tarjeta > h3 { color: #0369a1; }
+#respuesta.error { color: #b91c1c; }
+#respuesta.exito { color: #15803d; }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f5f7fa;
-  color: #1e293b;
-  line-height: 1.6;
-}
+/* Formulario */
+form { display: flex; flex-direction: column; gap: 8px; max-width: 400px; margin: auto; text-align: left; }
+input, select, textarea { padding: 8px; border: 2px solid #7c8ba1; border-radius: 6px; font: inherit; }
 
-/* Selector agrupado */
-h1, h2 {
-  line-height: 1.2;
-}
-
-h2 {
-  margin-bottom: 30px;
-  font-size: 2rem;
-  text-align: center;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-section {
-  padding: 60px 5%;
-}
-
-
-/* ----- Encabezado y menú ----- */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 5%;
-  background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #1e293b;
-  text-decoration: none;
-}
-
-/* Selector descendiente: los enlaces dentro de nav */
-nav a {
-  display: inline-block;
-  margin-left: 25px;
-  padding: 5px 0;
-  color: #1e293b;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* Pseudoclase :hover */
-nav a:hover {
-  color: #0369a1;
-}
-
-
-/* ----- Inicio (selector de ID) ----- */
-#inicio {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  background-color: #e0f2fe;
-}
-
-/* Selector combinado: ID + etiqueta */
-#inicio h1 {
-  margin-bottom: 15px;
-  font-size: 2.6rem;
-}
-
-#inicio p {
-  margin-bottom: 25px;
-  font-size: 1.1rem;
-}
-
-#inicio img {
-  width: 100%;
-  max-width: 420px;
-}
-
-.texto {
-  flex: 1;
-}
-
-
-/* ----- Botones (selectores de clase) ----- */
-.boton {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #0369a1;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.boton:hover {
-  background-color: #075985;
-}
-
-.btn-detalle {
-  margin-top: 15px;
-  padding: 8px 16px;
-  background-color: #e0f2fe;
-  color: #0369a1;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-
-/* ----- Tarjetas de servicios ----- */
-.tarjetas {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-  gap: 25px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.tarjeta {
-  padding: 25px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  text-align: center;
-}
-
-.tarjeta img {
-  display: block;
-  margin: 0 auto;
-}
-
-/* Selector de hijo directo */
-.tarjeta > h3 {
-  margin: 10px 0 5px;
-}
-
-.precio {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #0369a1;
-}
-
-.detalle {
-  margin-top: 10px;
-  color: #475569;
-}
-
-/* JavaScript pone o quita esta clase */
-.oculto {
-  display: none;
-}
-
-
-/* ----- Formulario ----- */
-#contacto {
-  background-color: #e9eff5;
-}
-
-form {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 12px;
-}
-
-label {
-  display: block;
-  margin: 15px 0 5px;
-  font-weight: bold;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 10px;
-  background-color: #ffffff;
-  border: 2px solid #7c8ba1;
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: 1rem;
-}
-
-/* Pseudoclase :focus (campo seleccionado) */
-input:focus,
-select:focus,
-textarea:focus {
-  border-color: #0369a1;
-}
-
-/* Selector descendiente: el botón dentro del formulario */
-form .boton {
-  width: 100%;
-  margin-top: 20px;
-}
-
-#respuesta {
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-/* Selector combinado: ID + clase (las clases las pone JavaScript) */
-#respuesta.error {
-  color: #dc2626;
-}
-
-#respuesta.exito {
-  color: #15803d;
-}
-
-
-/* ----- Pie de página ----- */
-footer {
-  padding: 20px;
-  background-color: #0f172a;
-  color: #cbd5e1;
-  text-align: center;
-}
-
-
-/* ----- Responsive ----- */
-
-/* Tabletas (900px o menos) */
-@media (max-width: 900px) {
-  #inicio {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .tarjetas {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-  }
-}
-
-/* Celulares (600px o menos) */
+/* Responsive: tabletas y celulares */
+@media (max-width: 900px) { .tarjetas { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  nav a {
-    margin: 0 10px;
-  }
-
-  #inicio h1 {
-    font-size: 2rem;
-  }
-
-  .tarjetas {
-    grid-template-columns: 1fr; /* 1 columna */
-  }
+  header { flex-direction: column; }
+  nav a { margin: 0 10px; }
+  .tarjetas { grid-template-columns: 1fr; }
 }
