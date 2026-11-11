@@ -1,34 +1,67 @@
-/* Selectores de etiqueta */
-body { margin: 0; font-family: Arial, sans-serif; background: #f5f7fa; color: #1e293b; }
-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 5%; background: #fff; }
+/* ===== Selectores de etiqueta ===== */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: "Poppins", Arial, sans-serif; background: #f5f7fa; color: #1e293b; line-height: 1.6; }
+header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 10px 5%; background: #fff; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
+nav { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 5px 20px; }
 h1 { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 1.5rem; }
-section { padding: 40px 5%; text-align: center; }
-button { padding: 10px 20px; background: #0369a1; color: #fff; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer; }
-footer { padding: 15px; background: #0f172a; color: #fff; text-align: center; }
+h2 { font-size: 2rem; text-align: center; }
+section { padding: 60px 5%; }
+img { max-width: 100%; height: auto; }
+button { padding: 10px 20px; background: #0369a1; color: #fff; border: none; border-radius: 8px; font: inherit; cursor: pointer; }
+button:hover { background: #075985; }
+footer { padding: 20px; background: #0f172a; color: #cbd5e1; text-align: center; }
 
-/* Selector de ID */
-#inicio { background: #e0f2fe; }
+/* ===== Selectores de ID ===== */
+#inicio { display: flex; align-items: center; gap: 40px; background: #e0f2fe; }
+#inicio h2 { margin: 0 0 10px; font-size: 2.6rem; text-align: left; }
+#inicio img { width: 100%; max-width: 420px; }
+#nosotros { background: #e9eff5; }
+#btnArriba { position: fixed; right: 20px; bottom: 20px; display: none; width: 48px; height: 48px; padding: 0; border-radius: 50%; font-size: 1.4rem; }
 
-/* Selectores de clase */
-.tarjetas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.tarjeta { padding: 20px; background: #fff; border-radius: 10px; }
+/* ===== Selectores de clase ===== */
+.boton { display: inline-block; padding: 12px 24px; background: #0369a1; color: #fff; border-radius: 8px; font-weight: 600; text-decoration: none; }
+.tarjetas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; max-width: 1100px; margin: auto; }
+.tarjeta { padding: 25px; background: #fff; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); transition: transform 0.3s; }
+.precio { margin: 0; font-size: 1.3rem; font-weight: 600; color: #0369a1; }
 .oculto { display: none; }
+.ventajas { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 0; list-style: none; }
+.check { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
 
-/* Selectores combinados */
-nav a { margin-left: 20px; color: #1e293b; font-weight: bold; text-decoration: none; }
+/* ===== Selectores combinados ===== */
+nav a { color: #1e293b; font-weight: 600; text-decoration: none; }
 nav a:hover { color: #0369a1; }
-.tarjeta > h3 { color: #0369a1; }
+.tarjeta:hover { transform: translateY(-5px); }
+.tarjeta > h3 { margin: 10px 0 5px; }
+.ventajas li { display: flex; align-items: center; gap: 10px; padding: 15px 20px; background: #fff; border-radius: 12px; font-weight: 600; }
+#btnArriba.visible { display: block; }
 #respuesta.error { color: #b91c1c; }
 #respuesta.exito { color: #15803d; }
 
-/* Formulario */
-form { display: flex; flex-direction: column; gap: 8px; max-width: 400px; margin: auto; text-align: left; }
-input, select, textarea { padding: 8px; border: 2px solid #7c8ba1; border-radius: 6px; font: inherit; }
+/* ===== Formulario ===== */
+form { display: flex; flex-direction: column; gap: 6px; max-width: 500px; margin: auto; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); }
+label { font-weight: 600; }
+input, select, textarea { padding: 10px; background: #fff; color: #1e293b; border: 2px solid #7c8ba1; border-radius: 8px; font: inherit; }
+input[type="checkbox"] { width: 18px; height: 18px; accent-color: #0369a1; }
 
-/* Responsive: tabletas y celulares */
-@media (max-width: 900px) { .tarjetas { grid-template-columns: repeat(2, 1fr); } }
+/* ===== Modo oscuro (JavaScript agrega la clase .oscuro al body) ===== */
+body.oscuro { background: #0f172a; color: #e2e8f0; color-scheme: dark; }
+body.oscuro header, body.oscuro .tarjeta, body.oscuro form, body.oscuro .ventajas li { background: #1e293b; }
+body.oscuro #inicio, body.oscuro #nosotros { background: #111c2e; }
+body.oscuro nav a { color: #e2e8f0; }
+body.oscuro .precio { color: #38bdf8; }
+body.oscuro input, body.oscuro select, body.oscuro textarea { background: #0f172a; color: #e2e8f0; border-color: #64748b; }
+body.oscuro #respuesta.error { color: #f87171; }
+body.oscuro #respuesta.exito { color: #4ade80; }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  #inicio { flex-direction: column; text-align: center; }
+  #inicio h2 { text-align: center; }
+  .tarjetas { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 600px) {
   header { flex-direction: column; }
-  nav a { margin: 0 10px; }
+  #inicio h2 { font-size: 2rem; }
   .tarjetas { grid-template-columns: 1fr; }
 }

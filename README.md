@@ -9,10 +9,10 @@ Proyecto final de Programación Web I (HTML, CSS y JavaScript).
 
 | Requerimiento | Cómo se cumple |
 |---|---|
-| Estructura HTML | `header`, `nav`, `main`, `section`, `article`, `footer` |
-| Selectores CSS | etiqueta, clase, ID y combinados (`nav a`, `.tarjeta > h3`, `#respuesta.error`) |
-| Menú | Enlaces a Inicio, Servicios y Contacto |
-| Botones | "Ver más" en cada servicio y "Enviar" |
-| Formulario | Texto, correo, lista y área de texto, con validación y mensaje de respuesta |
-| JavaScript | Eventos `click` y `submit`, función `mostrarMensaje` y cambios en el DOM |
+| Estructura HTML | `header`, `nav`, `main`, 4 `section`, 6 `article`, `footer` |
+| Selectores CSS | etiqueta, clase, ID y combinados (`nav a`, `.tarjeta > h3`, `body.oscuro .tarjeta`, `#respuesta.error`) |
+| Menú | Enlaces a Inicio, Servicios, Nosotros y Contacto |
+| Botones | Modo oscuro, "Ver más" en cada servicio, volver arriba y "Enviar solicitud" |
+| Formulario | 6 campos (texto, correo, celular, lista, área de texto y casilla) con validación y mensaje de respuesta |
+| JavaScript | Eventos `click`, `scroll` y `submit`, función `mostrarMensaje` y cambios en el DOM |
 | Responsive | 3 columnas en computador, 2 en tableta y 1 en celular |

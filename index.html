@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NodoTec: servicio técnico de computadores.">
-  <title>NodoTec</title>
+  <meta name="description" content="NodoTec: servicio técnico de computadores. Mantenimiento, reparación, recuperación de datos y redes.">
+  <title>NodoTec | Servicio técnico</title>
   <link rel="icon" href="recursos/iconos/favicon.svg">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
@@ -14,65 +15,114 @@
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
       <a href="#contacto">Contacto</a>
+      <button type="button" id="btnTema">Modo oscuro</button>
     </nav>
   </header>
 
   <main>
     <section id="inicio">
-      <h2>Tu computador como nuevo</h2>
-      <p>Reparamos y mantenemos tus equipos con diagnóstico gratis.</p>
+      <div>
+        <h2>Tu computador como nuevo</h2>
+        <p>Reparamos, mantenemos y protegemos tus equipos. Diagnóstico gratis y 90 días de garantía.</p>
+        <a href="#contacto" class="boton">Agendar servicio</a>
+      </div>
+      <img src="recursos/img/hero.svg" alt="Ilustración de un portátil en reparación" width="520" height="420">
     </section>
 
     <section id="servicios">
-      <h2>Servicios</h2>
+      <h2>Nuestros servicios</h2>
       <div class="tarjetas">
         <article class="tarjeta">
           <img src="recursos/iconos/mantenimiento.svg" alt="" width="48" height="48">
           <h3>Mantenimiento</h3>
-          <p class="oculto">Limpieza interna y revisión general. Precio: $80.000</p>
+          <p class="precio">$80.000</p>
+          <p class="oculto">Limpieza interna, cambio de pasta térmica y revisión general del equipo.</p>
+          <button type="button">Ver más</button>
+        </article>
+        <article class="tarjeta">
+          <img src="recursos/iconos/hardware.svg" alt="" width="48" height="48">
+          <h3>Reparación de hardware</h3>
+          <p class="precio">Desde $120.000</p>
+          <p class="oculto">Cambio de pantalla, teclado, disco o memoria RAM, con diagnóstico gratis.</p>
+          <button type="button">Ver más</button>
+        </article>
+        <article class="tarjeta">
+          <img src="recursos/iconos/sistema.svg" alt="" width="48" height="48">
+          <h3>Sistema operativo</h3>
+          <p class="precio">$70.000</p>
+          <p class="oculto">Instalación de Windows o Linux con copia de seguridad de tus archivos.</p>
           <button type="button">Ver más</button>
         </article>
         <article class="tarjeta">
           <img src="recursos/iconos/virus.svg" alt="" width="48" height="48">
           <h3>Eliminación de virus</h3>
-          <p class="oculto">Limpieza de virus e instalación de antivirus. Precio: $60.000</p>
+          <p class="precio">$60.000</p>
+          <p class="oculto">Eliminamos virus y programas maliciosos e instalamos un antivirus.</p>
           <button type="button">Ver más</button>
         </article>
         <article class="tarjeta">
           <img src="recursos/iconos/datos.svg" alt="" width="48" height="48">
           <h3>Recuperación de datos</h3>
-          <p class="oculto">Recuperamos archivos de discos y memorias USB. Precio: $150.000</p>
+          <p class="precio">Desde $150.000</p>
+          <p class="oculto">Recuperamos fotos y documentos de discos dañados o memorias USB.</p>
+          <button type="button">Ver más</button>
+        </article>
+        <article class="tarjeta">
+          <img src="recursos/iconos/redes.svg" alt="" width="48" height="48">
+          <h3>Redes WiFi</h3>
+          <p class="precio">$100.000</p>
+          <p class="oculto">Instalamos y configuramos routers y repetidores para mejorar tu señal.</p>
           <button type="button">Ver más</button>
         </article>
       </div>
     </section>
 
+    <section id="nosotros">
+      <h2>¿Por qué elegirnos?</h2>
+      <ul class="ventajas">
+        <li><img src="recursos/iconos/lupa.svg" alt="" width="32" height="32"> Diagnóstico gratis</li>
+        <li><img src="recursos/iconos/garantia.svg" alt="" width="32" height="32"> 90 días de garantía</li>
+        <li><img src="recursos/iconos/tecnico.svg" alt="" width="32" height="32"> Técnicos certificados</li>
+        <li><img src="recursos/iconos/domicilio.svg" alt="" width="32" height="32"> Servicio a domicilio</li>
+      </ul>
+    </section>
+
     <section id="contacto">
-      <h2>Contacto</h2>
+      <h2>Contáctanos</h2>
       <form id="formulario" novalidate>
         <label for="nombre">Nombre</label>
-        <input type="text" id="nombre">
+        <input type="text" id="nombre" placeholder="Ej: Laura Gómez">
         <label for="correo">Correo</label>
-        <input type="email" id="correo">
+        <input type="email" id="correo" placeholder="nombre@correo.com">
+        <label for="telefono">Celular</label>
+        <input type="tel" id="telefono" placeholder="3001234567">
         <label for="servicio">Servicio</label>
         <select id="servicio">
+          <option value="">Selecciona un servicio</option>
           <option>Mantenimiento</option>
+          <option>Reparación de hardware</option>
+          <option>Sistema operativo</option>
           <option>Eliminación de virus</option>
           <option>Recuperación de datos</option>
+          <option>Redes WiFi</option>
         </select>
         <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje"></textarea>
-        <button type="submit">Enviar</button>
+        <textarea id="mensaje" rows="3" placeholder="Cuéntanos qué le pasa a tu equipo"></textarea>
+        <label class="check"><input type="checkbox" id="acepto"> Acepto el tratamiento de mis datos</label>
+        <button type="submit">Enviar solicitud</button>
         <p id="respuesta" role="status"></p>
       </form>
     </section>
   </main>
 
   <footer>
+    <p>Calle 45 # 13-20 · Celular: 300 123 4567 · contacto@nodotec.com</p>
     <p>© 2026 NodoTec · Programación Web I · [Tu nombre]</p>
   </footer>
 
+  <button type="button" id="btnArriba" aria-label="Volver arriba">↑</button>
   <script src="script.js"></script>
 </body>
 </html>
